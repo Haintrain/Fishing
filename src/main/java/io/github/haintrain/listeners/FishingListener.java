@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.inventory.ItemStack;
 
 import static io.github.haintrain.statics.FishingMethods.*;
+import static io.github.haintrain.util.Utility.randomRange;
 
 
 public class FishingListener implements Listener{

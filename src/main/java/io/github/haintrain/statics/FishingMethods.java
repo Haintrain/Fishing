@@ -7,18 +7,19 @@ import org.bukkit.block.Biome;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import static io.github.haintrain.util.Utility.loreToArray;
 import static io.github.haintrain.util.Utility.makeItem;
 import static io.github.haintrain.util.Utility.randomRange;
 
 public class FishingMethods {
 
     private static ItemStack[] treasure = new ItemStack[]{
-            makeItem(new ItemStack(Material.COOKED_CHICKEN), "Chicken Tofu", "Don't question how it got here"),
-            makeItem(new ItemStack(Material.BREAD), "Not Pockets", "It's just bread"),
-            makeItem(new ItemStack(Material.BOOK_AND_QUILL), "Notepad", "One wonders how the pages are still dry"),
-            makeItem(new ItemStack(Material.DIAMOND), "Pearl", "Lucky you"),
-            makeItem(new ItemStack(Material.CHORUS_FRUIT), "Purple Fruit"),
-            makeItem(new ItemStack(Material.GOLD_INGOT), "Solid Bar of Gold", "It has a hefty weight to it"),
+            makeItem(new ItemStack(Material.COOKED_CHICKEN), "Chicken Tofu", loreToArray("Don't question how it got here")),
+            makeItem(new ItemStack(Material.BREAD), "Not Pockets", loreToArray("It's just bread")),
+            makeItem(new ItemStack(Material.BOOK_AND_QUILL), "Notepad", loreToArray("One wonders how the pages are still dry")),
+            makeItem(new ItemStack(Material.DIAMOND), "Pearl", loreToArray("Lucky you")),
+            makeItem(new ItemStack(Material.CHORUS_FRUIT), "Purple Fruit", loreToArray("This was probably a mistake")),
+            makeItem(new ItemStack(Material.GOLD_INGOT), "Solid Bar of Gold", loreToArray("It has a hefty weight to it")),
             FishingEnum.THEHARRISONFISH.getFish(),};
 
     private static ItemStack[] junk = new ItemStack[]{

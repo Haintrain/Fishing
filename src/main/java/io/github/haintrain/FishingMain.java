@@ -4,7 +4,6 @@ import io.github.haintrain.commands.FishingNetCommands;
 import io.github.haintrain.listeners.ConsumeListener;
 import io.github.haintrain.listeners.FishingListener;
 import io.github.haintrain.listeners.FishingNetListener;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
