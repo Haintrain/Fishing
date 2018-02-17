@@ -1,4 +1,4 @@
-package io.github.haintrain.fishing;
+package io.github.haintrain.listeners;
 
 import io.github.archemedes.customitem.CustomTag;
 import org.bukkit.*;
@@ -12,7 +12,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class Consuming implements Listener{
+public class ConsumeListener implements Listener{
 
     @EventHandler
     public void playerEat(PlayerItemConsumeEvent event){
@@ -46,6 +46,8 @@ public class Consuming implements Listener{
                     PotionEffect pot3 = new PotionEffect(PotionEffectType.POISON, 100, 1);
                     player.addPotionEffect(pot);
                     player.addPotionEffect(pot1);
+                    player.addPotionEffect(pot2);
+                    player.addPotionEffect(pot3);
                 }
                 if(fishTag.get("name").equalsIgnoreCase("Ghostfish")){
                     PotionEffect pot = new PotionEffect(PotionEffectType.INVISIBILITY, 40, 1);
@@ -77,6 +79,9 @@ public class Consuming implements Listener{
                     player.addPotionEffect(pot);
                     player.addPotionEffect(pot1);
                     player.addPotionEffect(pot2);
+                }
+                if (fishTag.get("name").equalsIgnoreCase("The Harrison Fish")) {
+                    player.setFireTicks(100);
                 }
                 else{
                     player.sendMessage("It's just a fish.");

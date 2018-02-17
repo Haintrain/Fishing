@@ -1,4 +1,4 @@
-package io.github.haintrain.fishing;
+package io.github.haintrain.enums;
 
 import io.github.archemedes.customitem.CustomTag;
 import org.bukkit.Material;
@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public enum Species{
+import static io.github.haintrain.util.Utility.makeItem;
+
+public enum FishingEnum {
     MAGIKARP("Magikarp"),
     HERRING("Herring"),
     LAKEFISH("Lakefish"),
@@ -19,6 +21,7 @@ public enum Species{
     WORMFISH("Wormfish"),
     CATFISH("Catfish"),
     FLOUNDER("Flounder"),
+    THEHARRISONFISH("The Harrison Fish", "He beat me in a round of PvP due to lag"),
     MUDSUCKER("Mudsucker"),
     HAGFISH("Hagfish"),
     RIBBONTAIL("Ribbontail"),
@@ -43,7 +46,7 @@ public enum Species{
     private final String name;
     private final List<String> lore;
 
-    Species(final String name, final String... lore){
+    FishingEnum(final String name, final String... lore){
         this.name = name;
 
         if (lore != null && lore.length > 0) {
@@ -59,18 +62,7 @@ public enum Species{
     }
 
     public final ItemStack getFish(){
-        ItemStack fish = new ItemStack((Material.RAW_FISH));
-        if (this.name != null || this.lore != null) {
-            final ItemMeta m = fish.getItemMeta();
-            if (this.name != null) {
-                m.setDisplayName(this.name);
-            }
-            if (this.lore != null) {
-                m.setLore(this.lore);
-            }
-            fish.setItemMeta(m);
-        }
-
+        ItemStack fish = makeItem(new ItemStack(Material.RAW_FISH), name, lore);
         final CustomTag fishTag = CustomTag.getFrom(fish);
 
         fishTag.put("name", this.name);

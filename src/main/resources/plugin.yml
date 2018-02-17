@@ -1,3 +1,9 @@
-name: Fishing
-main: io.github.haintrain.fishing.Fishing
+name: FishingMain
+main: io.github.haintrain.FishingMain
 version: 0.0.1
+
+
+commands:
+  net:
+    description: Test
+    usage: /net
