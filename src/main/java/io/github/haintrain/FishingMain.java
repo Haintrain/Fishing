@@ -1,5 +1,6 @@
 package io.github.haintrain;
 
+import io.github.haintrain.SQL.SQL;
 import io.github.haintrain.commands.FishingNetCommands;
 import io.github.haintrain.listeners.ConsumeListener;
 import io.github.haintrain.listeners.FishingListener;
@@ -23,6 +24,7 @@ public class FishingMain extends JavaPlugin implements Listener, CommandExecutor
     private Connection connection;
     private String host, database, username, password;
     private int port;
+    private SQL sql;
 
     @Override
     public void onEnable() {
@@ -42,6 +44,8 @@ public class FishingMain extends JavaPlugin implements Listener, CommandExecutor
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        sql = new SQL(connection);
     }
 
     private void registerEvents(org.bukkit.plugin.Plugin plugin, Listener... listeners) {

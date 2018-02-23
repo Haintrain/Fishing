@@ -1,6 +1,7 @@
 package io.github.haintrain.listeners;
 
 import io.github.archemedes.customitem.CustomTag;
+import io.github.haintrain.enums.FishingEnum;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

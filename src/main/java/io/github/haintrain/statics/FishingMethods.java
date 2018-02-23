@@ -129,9 +129,4 @@ public class FishingMethods {
 
         return junk[rand];
     }
-
-
-
-
-
 }

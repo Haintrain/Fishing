@@ -1,8 +1,6 @@
 package io.github.haintrain.util;
 
 import io.github.archemedes.customitem.CustomTag;
-import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -50,5 +48,14 @@ public class Utility {
             item.setItemMeta(m);
         }
         return item;
+    }
+
+    public static Boolean isCustomItem(ItemStack item, String type){
+        if(CustomTag.hasCustomTag(item, "item")){
+            if(CustomTag.getTagValue(item, "item").equals(type)){
+                return true;
+            }
+        }
+        return false;
     }
 }

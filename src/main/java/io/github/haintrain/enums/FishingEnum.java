@@ -11,7 +11,7 @@ import java.util.List;
 
 import static io.github.haintrain.util.Utility.makeItem;
 
-public enum FishingEnum {
+public enum FishingEnum{
     MAGIKARP("Magikarp"),
     HERRING("Herring"),
     LAKEFISH("Lakefish"),
@@ -66,6 +66,7 @@ public enum FishingEnum {
         final CustomTag fishTag = CustomTag.getFrom(fish);
 
         fishTag.put("name", this.name);
+        fishTag.put("item", "fish");
         fishTag.put("raw", "true");
         fish = CustomTag.applyTo(fishTag, fish);
 
