@@ -1,9 +1,8 @@
-package io.github.haintrain.enums;
+package io.github.haintrain.fishing.enums;
 
 import io.github.archemedes.customitem.CustomTag;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,12 +61,10 @@ public enum FishingEnum{
     }
 
     public final ItemStack getFish(){
-        ItemStack fish = makeItem(new ItemStack(Material.RAW_FISH), name, lore);
+        ItemStack fish = makeItem(new ItemStack(Material.RAW_FISH), name, "fish", lore);
         final CustomTag fishTag = CustomTag.getFrom(fish);
 
         fishTag.put("name", this.name);
-        fishTag.put("item", "fish");
-        fishTag.put("raw", "true");
         fish = CustomTag.applyTo(fishTag, fish);
 
         return fish;

@@ -1,5 +1,6 @@
-package io.github.haintrain.commands;
+package io.github.haintrain.fishing.commands;
 
+import io.github.haintrain.fishing.classes.FishingNet;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,8 +18,11 @@ public class FishingNetCommands implements CommandExecutor{
             return false;
         }
 
+
         Player player = (Player) sender;
-        player.sendMessage("test");
+        if(args.length == 0 && args[0].equals("net")){
+            player.getInventory().setItemInMainHand(new FishingNet("Test", 5).getNet());
+        }
 
         return true;
     }

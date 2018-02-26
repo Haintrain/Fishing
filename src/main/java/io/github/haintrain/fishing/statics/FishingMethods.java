@@ -1,6 +1,6 @@
-package io.github.haintrain.statics;
+package io.github.haintrain.fishing.statics;
 
-import io.github.haintrain.enums.FishingEnum;
+import io.github.haintrain.fishing.enums.FishingEnum;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Biome;
@@ -13,13 +13,14 @@ import static io.github.haintrain.util.Utility.randomRange;
 
 public class FishingMethods {
 
+
     private static ItemStack[] treasure = new ItemStack[]{
-            makeItem(new ItemStack(Material.COOKED_CHICKEN), "Chicken Tofu", loreToArray("Don't question how it got here")),
-            makeItem(new ItemStack(Material.BREAD), "Not Pockets", loreToArray("It's just bread")),
-            makeItem(new ItemStack(Material.BOOK_AND_QUILL), "Notepad", loreToArray("One wonders how the pages are still dry")),
-            makeItem(new ItemStack(Material.DIAMOND), "Pearl", loreToArray("Lucky you")),
-            makeItem(new ItemStack(Material.CHORUS_FRUIT), "Purple Fruit", loreToArray("This was probably a mistake")),
-            makeItem(new ItemStack(Material.GOLD_INGOT), "Solid Bar of Gold", loreToArray("It has a hefty weight to it")),
+            makeItem(new ItemStack(Material.COOKED_CHICKEN), "Chicken Tofu", "fishing treasure", loreToArray("Don't question how it got here")),
+            makeItem(new ItemStack(Material.BREAD), "Not Pockets", "fishing treasure", loreToArray("It's just bread")),
+            makeItem(new ItemStack(Material.BOOK_AND_QUILL), "Notepad","fishing treasure", loreToArray("One wonders how the pages are still dry")),
+            makeItem(new ItemStack(Material.DIAMOND), "Pearl", "fishing treasure", loreToArray("Lucky you")),
+            makeItem(new ItemStack(Material.CHORUS_FRUIT), "Purple Fruit", "fishing treasure", loreToArray("This was probably a mistake")),
+            makeItem(new ItemStack(Material.GOLD_INGOT), "Solid Bar of Gold", "fishing treasure", loreToArray("It has a hefty weight to it")),
             FishingEnum.THEHARRISONFISH.getFish(),};
 
     private static ItemStack[] junk = new ItemStack[]{
@@ -86,7 +87,7 @@ public class FishingMethods {
                         break;
                 }
             case SWAMPLAND:
-                rand = randomRange(1, 5);
+                rand = randomRange(1, 6);
                 switch (rand){
                     case 1: fish = FishingEnum.RIBBONTAIL.getFish(); break;
                     case 2: fish = FishingEnum.SPITTAIL.getFish(); break;

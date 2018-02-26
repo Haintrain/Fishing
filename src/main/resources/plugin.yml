@@ -1,5 +1,5 @@
-name: FishingMain
-main: io.github.haintrain.FishingMain
+name: Main
+main: io.github.haintrain.Main
 version: 0.0.1
 
 commands:

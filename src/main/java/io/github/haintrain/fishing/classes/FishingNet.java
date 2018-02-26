@@ -1,4 +1,4 @@
-package io.github.haintrain.classes;
+package io.github.haintrain.fishing.classes;
 
 import io.github.archemedes.customitem.CustomTag;
 import org.bukkit.Material;
@@ -36,12 +36,10 @@ public class FishingNet{
     }
 
     public final ItemStack getNet(){
-        ItemStack net = makeItem(new ItemStack(Material.SPONGE), name, lore);
+        ItemStack net = makeItem(new ItemStack(Material.SPONGE), name, "net", lore);
         final CustomTag netTag = CustomTag.getFrom(net);
 
         netTag.put("name", this.name);
-        netTag.put("item", "net");
-        netTag.put("power", power.toString());
         net = CustomTag.applyTo(netTag, net);
 
         return net;
